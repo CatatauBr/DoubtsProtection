@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Doubts Protection</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/template-portal.css" asp-append-version="true" />
+    @await RenderSectionAsync("css", required: false) 
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="container-xxl">
+            <div class="container-logotipo">
+                <a href="#">
+                    <img src="~/img/logo.png" alt="Logotipo da Doubts Protection">
+                </a>
+            </div>
+            <div class="container-icones-menu">
+                <span class="material-symbols-outlined icone-ativo" id="icone-menu-principal">menu</span>
+                <span class="material-symbols-outlined" id="icone-fechar-menu-principal">close</span>
+            </div>
+            <nav>
+                <menu>
+                    <li class="item-menu"><a href="#">Página Inicial</a></li>
+                    <li class="item-menu"><a href="#">Notícias</a></li>
+                    <li class="item-menu"><a href="#">Fórum</a></li>
+                    <li class="item-menu"><a href="#">Contato</a></li>                    
+                </menu>
+            </nav>
+        </div>
+    </header>
+
+    <div class="exibir-view">
+        @RenderBody()
+    </div>
+
+    <footer class="rodape-site">
+        <div class="container-xxl">
+            <div class="container-logotipo">
+                <a href="#">
+                    <img src="~/img/logo.png" alt="Logotipo da Doubts Protection">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/menu-portal.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

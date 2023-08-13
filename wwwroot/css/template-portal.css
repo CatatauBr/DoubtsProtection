@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: 'Quicksand', Verdana, sans-serif;
+    padding:0;
+    margin:0;
+    vertical-align:baseline;
+    list-style:none;
+    border:0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin-bottom: 0px;
+}
+
+.cabecalho {
+    background-color: #18bd9b;
+    box-shadow: 0rem 0.1rem 0.2rem #000000;
+    z-index: 1;
+    width: 100%;
+}
+
+.cabecalho > .container-xxl { /*organizando o logotipo e o menu dentro do cabeçalho*/
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    grid-template-rows: auto auto;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.container-logotipo {
+    display: flex;
+}
+
+.container-logotipo img{
+    width: 126px;
+}
+
+.cabecalho nav menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Quebra a linha quando não há espaço para todos os itens */
+    height: 100%;
+    margin-right: 10px;
+}
+
+.item-menu a {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0px 6px 4px 6px;
+    font-size: 2.1rem;
+    font-weight: 500;
+}
+
+.item-menu a:hover {
+    text-decoration: underline;
+    transition: all 40ms ease;
+    color: #18bd9b;
+    background-color: white;
+}
+
+.container-icones-menu {
+    display: none;
+}
+
+.rodape-site {
+    background-color: #18bd9b;
+    border-top: 1px solid rgb(0, 0, 0)
+}
+
+.exibir-view {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+@media screen and (max-width: 1024px) { /*Formatando o menu no layout mobile*/
+    .container-icones-menu {
+        display: flex;
+        justify-content: flex-end;   
+        font-size: 5.0rem;     
+    }
+    
+    .container-icones-menu > span { /*Os 2 seletores servem para deixar apenas um ícone ativo*/
+        display: none;
+    }
+
+    .container-icones-menu > .icone-ativo {
+        font-weight: bold;
+        font-size: 5.0rem;
+        color: white;
+        cursor: pointer;
+        display: block;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .menu-aberto {
+        height: 100vh;
+    }
+
+    .menu-aberto > .container-xxl {
+        grid-template-rows: auto auto;
+        align-items: unset;
+    }
+
+    .menu-aberto nav {
+        display: block;
+        grid-column: 1 / 3;
+    }
+
+    .menu-aberto {
+        position: fixed;
+        z-index: 1;
+        overflow-y: scroll;
+    }
+
+    .exibir-view {
+        position: relative;
+        z-index: 0;
+    }
+
+    .cabecalho nav menu {
+        flex-direction: column;
+        min-height: 250px;
+        margin-top: calc(20px + 2vh);
+    }
+}

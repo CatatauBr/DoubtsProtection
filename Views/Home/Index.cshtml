@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section css {
+    <link rel="stylesheet" href="~/css/pagina-inicial.css" asp-append-version="true" />
+}
+
+<div class="container-xxl banner-e-publicidade">
+    <!-- banner -->
+    <main class="container-banner">
+        <!--cada slide está representado aqui-->
+        <div class="item-banner" id="idNoticia-1">
+            <div class="foto-capa">
+                <img src="~/img/pte-estaiada.jpg" alt="teste" />
+            </div>
+            <div class="titulo-banner">
+                <h2><a href="#">titulo que deverá ser adicionando na publicação. De acordo com a modelagem do sistema, ele deverá ter XPTO caracteres.</a></h2>
+            </div>
+        </div>
+        <div class="item-banner" id="idNoticia-2">
+            <div class="foto-capa">
+                <img src="~/img/lisboa.jpg" alt="teste" />
+            </div>
+            <div class="titulo-banner">
+                <h2><a href="#">Nova Foto de Lisboa.</a></h2>
+            </div>
+        </div>
+        <div class="item-banner" id="idNoticia-3">
+            <div class="foto-capa">
+                <img src="~/img/arequipa.jpg" alt="teste" />
+            </div>
+            <div class="titulo-banner">
+                <h2><a href="#">Nova Foto de Lisboa.</a></h2>
+            </div>
+        </div>
+        <!-- navegação via eta e indice não ordenados. -->
+        <div class="container-btns-setas">
+            <button type="button" id="btn-voltar">
+                <span class="material-symbols-outlined"> arrow_back </span>
+            </button>
+            <button type="button" id="btn-avancar">
+                <span class="material-symbols-outlined"> arrow_forward </span>
+            </button>
+        </div>
+        <div class="indice-itens">
+            <span class="ponto" id="item-1"></span>
+            <span class="ponto" id="item-2"></span>
+            <span class="ponto" id="item-3"></span>
+        </div>
+    </main>
+
+    <!-- será adicionado o espaço para exibição de ads-->
+    <aside class="publicidade">
+
+    </aside>
+</div>
+
+@section Scripts {
+    <script src="~/js/banner-rotativo.js" asp-append-version="true"></script>
+}
